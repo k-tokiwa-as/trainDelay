@@ -1,1 +1,5 @@
-# trainDelay
+# 概要
+通知したいルームに路線の遅延情報を通知する（複数の路線情報が可能）
+
+遅延情報のデータは　<https://rti-giken.jp/fhc/api/train_tetsudo/>　より提供いただいている情報を使用。 
+実行にはNode.jsをインストールが必要。
