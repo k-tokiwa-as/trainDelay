@@ -2,10 +2,9 @@ version: '3'
 services:
   train-delay:
     build: .
-    image: node-express-dev:1.0
-    container_name: node
+    container_name: train-delay
     tty: true
     volumes:
       - ./node/app:/app
     ports:
-      - "8080:3000"
+      - "8081:3000"

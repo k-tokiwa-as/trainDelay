@@ -1,8 +1,11 @@
 FROM node:8.9.4-alpine
 MAINTAINER c-sasaki
-RUN npm install -g express-generator@4.16.0 \
-    && mkdir /app
+ENV NODE_ENV=development
+RUN mkdir /app
 COPY . /app/
 WORKDIR /app
+RUN npm i @slack/client -g \
+    && npm i request -g \
+    && npm i dotenv -g
 EXPOSE 3000
 CMD ["node", "/app/index.js"]

@@ -21,5 +21,4 @@ const trainDelayInfo = {
   }
 
 }
-
 module.exports = trainDelayInfo;
