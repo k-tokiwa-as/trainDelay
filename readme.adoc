@@ -1,0 +1,24 @@
+---
+title: trainDelay
+description: 電車遅延
+---
+
+:source-highlighter: coderay
+
+= trainDelay
+
+ 電車遅延スクリプトのdockerize
+ node環境で悩みたくない場合はこれを使うと良い。
+
+== The environment
+----
+.env.sampleを.envファイルに変更        
+SLACK_TOKEN=***********************           #***に任意のtokenを記載する
+----
+
+== How to use it
+
+----
+docker-compose build --force-rm --no-cache    #初回のみ実行
+docker-compose run --rm                       #実行後コンテナを破棄
+----
