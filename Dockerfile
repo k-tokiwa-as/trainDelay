@@ -1,6 +1,7 @@
 FROM node:8.9.4-alpine
 MAINTAINER c-sasaki
-RUN npm install -g express-generator@4.16.0
+RUN npm install -g express-generator@4.16.0 \
+    && mkdir /app
 COPY . /app/
 WORKDIR /app
 EXPOSE 3000
