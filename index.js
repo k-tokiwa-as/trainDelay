@@ -4,6 +4,7 @@ const fs = require('fs')
     , trainDelayInfo = require('./train-delay')
     , targetTrainInfo = JSON.parse(fs.readFileSync(__dirname + '/targetTrainInfo.json', 'utf8'))
     ;   
+    require('dotenv').config();
 
 trainDelayInfo.get()
   .then((data) => {
@@ -20,6 +21,8 @@ trainDelayInfo.get()
   }); 
 
 const token = process.env.SLACK_TOKEN;
+console.log(token);
+
 const web = new WebClient(token);
 
 function postToSlack(trainName, infoLink, channelId) {
