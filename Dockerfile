@@ -7,6 +7,7 @@ WORKDIR /app
 RUN npm i @slack/client -g \
     && npm i request -g \
     && npm i dotenv -g \
-    && npm i -g
+    && npm i
 EXPOSE 3000
+VOLUME /app
 CMD ["node", "/app/index.js"]
