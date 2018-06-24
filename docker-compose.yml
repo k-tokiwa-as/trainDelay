@@ -3,8 +3,4 @@ services:
   train-delay:
     build: .
     container_name: train-delay
-    tty: true
-    volumes:
-      - ./node/app:/app
-    ports:
-      - "8081:3000"
+    command: node index.js

@@ -1,14 +1,9 @@
----
-title: trainDelay
-description: 電車遅延
----
-
 :source-highlighter: coderay
 
 = trainDelay
 
  電車遅延スクリプトのdockerize
- node環境で悩みたくない場合はこれを使うと良い。
+ 環境で悩みたくない場合はこれを使うと良い。
 
 == The environment
 ----
@@ -18,7 +13,14 @@ SLACK_TOKEN=***********************           #***に任意のtokenを記載す�
 
 == How to use it
 
+docker
 ----
-docker-compose build --force-rm --no-cache    #初回のみ実行
-docker-compose run --rm                       #実行後コンテナを破棄
+docker build  -t traindelay-alert:v1 --force-rm --no-cache .    #build
+docker run --rm --name traindelay-alert traindelay-alert:v1     #run
+----
+
+docker-compose
+----
+docker-compose build    #build
+docker-compose up       #run
 ----
