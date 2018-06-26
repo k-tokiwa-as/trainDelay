@@ -2,8 +2,13 @@
 
 = trainDelay
 
- 電車遅延スクリプトのdockerize
- 環境で悩みたくない場合はこれを使うと良い。
+ docker版 電車遅延をslackに通知
+
+ node:8-alpine
+ slack/client
+ request
+ dotenv
+
 
 == The environment
 ----
@@ -16,11 +21,13 @@ SLACK_TOKEN=***********************           #***に任意のtokenを記載す�
 docker
 ----
 docker build  -t traindelay-alert:v1 --force-rm --no-cache .    #build
-docker run --rm --name traindelay-alert traindelay-alert:v1     #run
+docker run --rm --name traindelay-alert traindelay-alert:v1     #run
 ----
 
 docker-compose
 ----
-docker-compose build    #build
-docker-compose up       #run
+docker-compose build          #build
+docker-compose run --rm       #run
+or
+docker-compose up
 ----
